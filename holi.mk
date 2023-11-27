@@ -539,5 +539,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Miui Cam
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.miui.notch=1 \
+    ro.product.mod_device=chime
+
+# Camera
+$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm6375-common/sm6375-common-vendor.mk)
